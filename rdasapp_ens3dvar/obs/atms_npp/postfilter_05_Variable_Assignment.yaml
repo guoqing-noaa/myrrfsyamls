@@ -1,0 +1,16 @@
+filter: Variable Assignment
+assignments:
+- name: CLWMatchIndex@DerivedMetaData
+  channels: 1-22
+  type: float
+  function:
+    name: CLWMatchIndexMW@ObsFunction
+    channels: 1-22
+    options:
+      channels: 1-22
+      clwobs_function:
+        name: CLWRetFromObs@DerivedMetaData
+      clwbkg_function:
+        name: CLWRetFromBkg@DerivedMetaData
+      clwret_clearsky: [0.03, 0.03, 0.03, 0.02, 0.03, 0.08, 0.15, 0.0, 0.0, 0.0, 0.0,
+        0.0, 0.0, 0.0, 0.0, 0.02, 0.03, 0.03, 0.03, 0.03, 0.05, 0.1]

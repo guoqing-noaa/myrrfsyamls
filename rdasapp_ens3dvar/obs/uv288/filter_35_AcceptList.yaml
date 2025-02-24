@@ -1,0 +1,7 @@
+filter: AcceptList
+apply at iterations: 0,1
+where:
+- variable: MetaData/dataProviderOrigin
+  is_in: [SAO]
+- variable: MetaData/stationIdentification
+  is_in: [WLV, WSF, WUY, WQQ, WGN, WWN, WWP, WUT, WSU, WNC, WMI]

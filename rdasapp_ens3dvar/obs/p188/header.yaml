@@ -1,0 +1,28 @@
+obs space:
+  name: p188=msonet_stationPressure_188
+  distribution:
+    name: RoundRobin
+    halo size: 300e3
+  obsdatain:
+    engine:
+      type: H5File
+      obsfile: data/obs/ioda_msonet_dc.nc
+  obsdataout:
+    engine:
+      type: H5File
+      obsfile: p188=jdiag_msonet_stationPressure_188.nc4
+      allow overwrite: true
+  io pool:
+    max pool size: 1
+  observed variables: [stationPressure]
+  simulated variables: [stationPressure]
+obs operator:
+  name: SfcPCorrected
+  da_psfc_scheme: GSI
+  geovar_sfc_geomz: geopotential_height_at_surface
+  geovar_geomz: geopotential_height
+obs localizations:
+- localization method: Horizontal Gaspari-Cohn
+  lengthscale: 300e3
+obs error:
+  covariance model: diagonal

@@ -1,0 +1,12 @@
+filter: Bounds Check
+fileter variables:
+- name: brightnessTemperature
+test variables:
+- name: LAMDomainCheck@ObsFunction
+  options:
+    map_projection: circle
+    save: true
+    cenlat: 38.5
+    cenlon: -97.5
+    radius: 2500
+minvalue: 1.0

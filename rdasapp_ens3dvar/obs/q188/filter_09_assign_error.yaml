@@ -1,0 +1,15 @@
+filter: Perform Action
+apply at iterations: 0,1
+filter variables:
+- name: specificHumidity
+action:
+  name: assign error
+  error parameter: 50.0
+where:
+- variable:
+    name: ObsErrorData/specificHumidity
+  minvalue: 50.0
+- variable:
+    name: ObsErrorData/specificHumidity
+  value: is_valid
+defer to post: true

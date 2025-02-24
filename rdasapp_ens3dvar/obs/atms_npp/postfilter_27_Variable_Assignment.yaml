@@ -1,0 +1,27 @@
+filter: Variable Assignment
+assignments:
+- name: ObsErrorBound@DerivedMetaData
+  channels: 1-22
+  type: float
+  function:
+    name: ObsErrorBoundMW@ObsFunction
+    channels: 1-22
+    options:
+      sensor: atms_npp
+      channels: 1-22
+      obserr_bound_latitude:
+        name: ObsErrorFactorLat@DerivedMetaData
+      obserr_bound_transmittop:
+        name: ObsErrorFactorTransmitTop@DerivedMetaData
+        channels: 1-22
+        options:
+          channels: 1-22
+      obserr_bound_topo:
+        name: ObsErrorFactorTopo@DerivedMetaData
+        channels: 1-22
+      obserr_function:
+        name: InitialObsError@DerivedMetaData
+        channels: 1-22
+        threhold: 3
+      obserr_bound_max: [4.5, 4.5, 3.0, 3.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0,
+        1.0, 2.0, 4.5, 4.5, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0]

@@ -1,0 +1,8 @@
+filter: AcceptList
+apply at iterations: 0,1
+where:
+- variable: MetaData/dataProviderOrigin
+  is_in: [KSDOT]
+- variable: MetaData/stationIdentification
+  is_in: [K1EGN, K5KSM, K5EUR, K5EHT, K5KIO, K5ED7, K5OK7, K5LEA, K5WKY, K5WSU, K5NES,
+    K5SLN, K5PEA, K5BCR, K5FRD]

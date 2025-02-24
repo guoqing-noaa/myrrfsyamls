@@ -1,0 +1,21 @@
+output:
+  filename: ./ana.$Y-$M-$D_$h.$m.$s.nc
+  stream name: analysis
+variational:
+  minimizer:
+    algorithm: DRPCG
+  iterations:
+  - geometry:
+      nml_file: ./namelist.atmosphere
+      streams_file: ./streams.atmosphere
+      deallocate non-da fields: true
+      interpolation type: unstructured
+    gradient norm reduction: 1e-3
+    ninner: 50
+  - geometry:
+      nml_file: ./namelist.atmosphere
+      streams_file: ./streams.atmosphere
+      deallocate non-da fields: true
+      interpolation type: unstructured
+    gradient norm reduction: 1e-3
+    ninner: 50

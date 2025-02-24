@@ -1,0 +1,8 @@
+filter: AcceptList
+apply at iterations: 0,1
+where:
+- variable: MetaData/dataProviderOrigin
+  is_in: [GoMOOS]
+- variable: MetaData/stationIdentification
+  is_in: ['44037', '44029', '44034', '44024', '44030', '44035', D0201, '44031', '44032',
+    '44038']

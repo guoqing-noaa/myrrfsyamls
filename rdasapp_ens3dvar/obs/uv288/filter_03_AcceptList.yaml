@@ -1,0 +1,7 @@
+filter: AcceptList
+apply at iterations: 0,1
+where:
+- variable: MetaData/dataProviderOrigin
+  is_in: [APG]
+- variable: MetaData/stationIdentification
+  is_in: [APG4, APG9, APG1, APG7]

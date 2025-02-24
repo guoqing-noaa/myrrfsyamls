@@ -1,0 +1,12 @@
+filter: Background Check
+apply at iterations: 0,1
+filter variables:
+- name: specificHumidity
+threshold: 4.9
+action:
+  name: reject
+where:
+- variable: ObsType/specificHumidity
+- variable: QualityMarker/specificHumidity
+  is_in: 3
+defer to post: true

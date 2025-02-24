@@ -1,0 +1,7 @@
+filter: AcceptList
+apply at iterations: 0,1
+where:
+- variable: MetaData/dataProviderOrigin
+  is_in: [RAWS, NEDOR, SFWMD, MOComAgNet, UDFCD, CAIC, CODOT, KSDOT, IADOT, MEDOT,
+    MNDOT, NDDOT, OK-Meso, MesoWest, WT-Meso, WYDOT, NOS-PORTS, NOS-NWLON, GoMOOS,
+    HADS]

@@ -1,0 +1,7 @@
+filter: AcceptList
+apply at iterations: 0,1
+where:
+- variable: MetaData/dataProviderOrigin
+  is_in: [NJWxNet]
+- variable: MetaData/stationIdentification
+  is_in: [KQ11, KQ59, KQ58, KQ43, KQ56, USFS2, USFS1, KQ55, KQ48, KQ49, KQ51, KQ52]

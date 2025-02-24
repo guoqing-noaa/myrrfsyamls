@@ -1,0 +1,10 @@
+filter: Variable Assignment
+assignments:
+- name: CLWRetFromBkg@DerivedMetaData
+  type: float
+  function:
+    name: CLWRetMW@ObsFunction
+    options:
+      clwret_ch238: 1
+      clwret_ch314: 2
+      clwret_types: [HofX]

@@ -1,0 +1,37 @@
+obs space:
+  name: uv288=msonet_winds_288
+  distribution:
+    name: RoundRobin
+    halo size: 300e3
+  obsdatain:
+    engine:
+      type: H5File
+      obsfile: data/obs/ioda_msonet_dc.nc
+  obsdataout:
+    engine:
+      type: H5File
+      obsfile: jdiag_uv288.nc4
+      allow overwrite: true
+  io pool:
+    max pool size: 1
+  observed variables: [windEastward, windNorthward]
+  simulated variables: [windEastward, windNorthward]
+obs operator:
+  name: Composite
+  components:
+  - name: VertInterp
+    hofx_scaling: true
+    hofx scaling field: wind_reduction_factor_at_10m
+    hofx scaling field group: GeoVaLs
+    vertical coordinate: air_pressure
+    observation vertical coordinate: pressure
+    observation vertical coordinate group: MetaData
+    interpolation method: log-linear
+    variables:
+    - name: windEastward
+    - name: windNorthward
+obs localizations:
+- localization method: Horizontal Gaspari-Cohn
+  lengthscale: 300e3
+obs error:
+  covariance model: diagonal

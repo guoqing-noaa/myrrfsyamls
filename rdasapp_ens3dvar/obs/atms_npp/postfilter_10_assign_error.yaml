@@ -1,0 +1,9 @@
+filter: Perform Action
+filter variables:
+- name: brightnessTemperature
+  channels: 1-22
+action:
+  name: assign error
+  error function:
+    name: InitialObsError@DerivedMetaData
+    channels: 1-22

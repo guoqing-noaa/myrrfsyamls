@@ -1,0 +1,29 @@
+filter: Create Diagnostic Flags
+filter variables:
+- name: brightnessTemperature
+  channels: 1-22
+flags:
+- name: ScanEdgeRemoval
+  initial value: false
+  force reinitialization: false
+- name: Thinning
+  initial value: false
+  force reinitialization: false
+- name: CLWRetrievalCheck
+  initial value: false
+  force reinitialization: false
+- name: WindowChannelExtremeResidual
+  initial value: false
+  force reinitialization: false
+- name: HydrometeorCheck
+  initial value: false
+  force reinitialization: false
+- name: GrossCheck
+  initial value: false
+  force reinitialization: false
+- name: InterChannelConsistency
+  initial value: false
+  force reinitialization: false
+- name: UseflagCheck
+  initial value: false
+  force reinitialization: false

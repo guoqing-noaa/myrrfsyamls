@@ -1,0 +1,30 @@
+obs space:
+  name: atms_npp=atms_npp
+  distribution:
+    name: RoundRobin
+    halo size: 300e3
+  obsdatain:
+    engine:
+      type: H5File
+      obsfile: data/obs/atms_npp_obs_2024052700_dc.nc
+  obsdataout:
+    engine:
+      type: H5File
+      obsfile: jdiag_atmos_npp.nc4
+  simulated variables: [brightnessTemperature]
+  observed variables: [brightnessTemperature]
+  channels: 1-22
+obs operator:
+  name: CRTM
+  Absorbers: [H2O, O3]
+  SurfaceWindGeoVars: uv
+  obs options:
+    Sensor_ID: atms_npp
+    EndianType: little_endian
+    CoefficientPath: data/crtm/
+    IRVISlandCoeff: IGBP
+  linear obs operator:
+    Absorbers: [H2O, O3]
+obs localizations:
+- localization method: Horizontal Gaspari-Cohn
+  lengthscale: 300e3

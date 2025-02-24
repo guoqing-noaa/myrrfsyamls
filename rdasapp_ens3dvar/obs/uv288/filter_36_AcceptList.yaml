@@ -1,0 +1,7 @@
+filter: AcceptList
+apply at iterations: 0,1
+where:
+- variable: MetaData/dataProviderOrigin
+  is_in: [SFWMD]
+- variable: MetaData/stationIdentification
+  is_in: [S331W, BELLW, S7WX, S61W, ROTNW, SGGEW, WRWX, BCSI, LXWS, S78W]

@@ -1,0 +1,7 @@
+filter: AcceptList
+apply at iterations: 0,1
+where:
+- variable: MetaData/dataProviderOrigin
+  is_in: [IEM]
+- variable: MetaData/stationIdentification
+  is_in: [SCSI4, SPYI4, SAFI4, SGMM5, SGRI4, KKAS2, PESS2, SSAI4, SFAI4]

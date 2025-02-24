@@ -1,0 +1,7 @@
+filter: AcceptList
+apply at iterations: 0,1
+where:
+- variable: MetaData/dataProviderOrigin
+  is_in: [VTDOT]
+- variable: MetaData/stationIdentification
+  is_in: [VT002, VT001]

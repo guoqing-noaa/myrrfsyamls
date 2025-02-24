@@ -1,0 +1,34 @@
+obs space:
+  name: uv233=aircar_winds_233
+  distribution:
+    name: RoundRobin
+    halo size: 300e3
+  obsdatain:
+    engine:
+      type: H5File
+      obsfile: data/obs/ioda_aircar_dc.nc
+  obsdataout:
+    engine:
+      type: H5File
+      obsfile: jdiag_uv233.nc4
+      allow overwrite: true
+  io pool:
+    max pool size: 1
+  observed variables: [windEastward, windNorthward]
+  simulated variables: [windEastward, windNorthward]
+obs operator:
+  name: Composite
+  components:
+  - name: VertInterp
+    vertical coordinate: air_pressure
+    observation vertical coordinate: pressure
+    observation vertical coordinate group: MetaData
+    interpolation method: log-linear
+    variables:
+    - name: windEastward
+    - name: windNorthward
+obs localizations:
+- localization method: Horizontal Gaspari-Cohn
+  lengthscale: 300e3
+obs error:
+  covariance model: diagonal

@@ -1,0 +1,8 @@
+filter: Bounds Check
+apply at iterations: 0,1
+filter variables:
+- name: stationPressure
+minvalue: 20000.0
+maxvalue: 120000.0
+action:
+  name: reduce obs space

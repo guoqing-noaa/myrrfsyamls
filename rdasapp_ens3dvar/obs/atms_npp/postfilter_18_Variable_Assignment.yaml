@@ -1,0 +1,11 @@
+filter: Variable Assignment
+assignments:
+- name: ObsErrorFactorTopo@DerivedMetaData
+  channels: 1-22
+  type: float
+  function:
+    name: ObsErrorFactorTopoRad@ObsFunction
+    channels: 1-22
+    options:
+      sensor: atms_npp
+      channels: 1-22

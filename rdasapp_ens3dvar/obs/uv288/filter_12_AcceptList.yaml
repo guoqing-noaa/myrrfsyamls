@@ -1,0 +1,7 @@
+filter: AcceptList
+apply at iterations: 0,1
+where:
+- variable: MetaData/dataProviderOrigin
+  is_in: [GADOT]
+- variable: MetaData/stationIdentification
+  is_in: [GA109, GA113, GA114, GA104, GA103]

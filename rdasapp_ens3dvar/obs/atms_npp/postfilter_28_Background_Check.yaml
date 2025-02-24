@@ -1,0 +1,12 @@
+filter: Background Check
+filter variables:
+- name: brightnessTemperature
+  channels: 1-22
+function absolute threshold:
+- name: ObsErrorBound@DerivedMetaData
+  channels: 1-22
+actions:
+- name: set
+  flag: GrossCheck
+  ignore: rejected observations
+- name: reject

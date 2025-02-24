@@ -1,0 +1,8 @@
+filter: AcceptList
+apply at iterations: 0,1
+where:
+- variable: MetaData/dataProviderOrigin
+  is_in: [NDDOT]
+- variable: MetaData/stationIdentification
+  is_in: [ND008, ND023, ND012, ND003, ND020, ND019, ND010, ND007, ND021, ND018, ND011,
+    ND002, ND009, ND004]

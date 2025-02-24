@@ -1,0 +1,10 @@
+filter: Variable Assignment
+assignments:
+- name: ObsErrorFactorTransmitTop@DerivedMetaData
+  channels: 1-22
+  type: float
+  function:
+    name: ObsErrorFactorTransmitTopRad@ObsFunction
+    channels: 1-22
+    options:
+      channels: 1-22

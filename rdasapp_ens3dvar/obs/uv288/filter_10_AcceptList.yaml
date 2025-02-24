@@ -1,0 +1,7 @@
+filter: AcceptList
+apply at iterations: 0,1
+where:
+- variable: MetaData/dataProviderOrigin
+  is_in: [COOP]
+- variable: MetaData/stationIdentification
+  is_in: [PATM1, DANM1, RGLM1, ISPV1]

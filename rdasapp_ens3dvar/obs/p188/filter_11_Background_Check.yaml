@@ -1,0 +1,12 @@
+filter: Background Check
+apply at iterations: 0,1
+filter variables:
+- name: stationPressure
+threshold: 2.8
+action:
+  name: reject
+where:
+- variable: ObsType/stationPressure
+- variable: QualityMarker/stationPressure
+  is_in: 3
+defer to post: true

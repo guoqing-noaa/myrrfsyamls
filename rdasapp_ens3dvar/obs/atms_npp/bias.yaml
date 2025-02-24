@@ -1,0 +1,29 @@
+input file: data/obs/atms_npp.satbias.nc4
+output file: ./out_atms_npp.satbias.nc
+variational bc:
+  predictors:
+  - name: constant
+  - name: lapseRate
+    order: 2
+    tlapse: data/obs/atms_npp.tlapse.txt
+  - name: lapseRate
+    tlapse: data/obs/atms_npp.tlapse.txt
+  - name: emissivityJacobian
+  - name: sensorScanAngle
+    order: 4
+  - name: sensorScanAngle
+    order: 3
+  - name: sensorScanAngle
+    order: 2
+  - name: sensorScanAngle
+covariance:
+  minimal required obs number: 20
+  variance range: [1.0e-06, 10.0]
+  step size: 0.0001
+  largest analysis variance: 10000.0
+  prior:
+    input file: data/obs/atms_npp.satbias_cov.nc4
+    inflation:
+      ratio: 1.1
+      ratio for small dataset: 2.0
+  output file: ./out_atms_npp.satbias_cov.nc

@@ -1,0 +1,17 @@
+filter: Variable Assignment
+assignments:
+- name: DerivedMetaData/HydrometeorCheckATMS
+  channels: 1-22
+  type: float
+  function:
+    name: HydrometeorCheckATMS@ObsFunction
+    channels: 1-22
+    options:
+      channels: 1-22
+      obserr_clearsky: [4.5, 4.5, 4.5, 2.5, 0.55, 0.3, 0.3, 0.4, 0.4, 0.4, 0.45, 0.45,
+        0.55, 0.8, 4.0, 4.0, 4.0, 3.5, 3.0, 3.0, 3.0, 3.0]
+      clwret_function:
+        name: CLWRetFromObs@DerivedMetaData
+      obserr_function:
+        name: InitialObsError@DerivedMetaData
+        channels: 1-22

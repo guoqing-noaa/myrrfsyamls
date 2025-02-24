@@ -1,0 +1,15 @@
+filter: Variable Assignment
+assignments:
+- name: Innovation@DerivedMetaData
+  channels: 1-22
+  type: float
+  function:
+    name: ObsFunction/Arithmetic
+    channels: 1-22
+    options:
+      variables:
+      - name: brightnessTemperature@ObsValue
+        channels: 1-22
+      - name: brightnessTemperature@HofX
+        channels: 1-22
+      coefs: [1, -1]

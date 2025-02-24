@@ -1,0 +1,19 @@
+cost type: 3D-Var
+time window:
+  begin: '2024-05-26T21:00:00Z'
+  length: PT6H
+jb evaluation: false
+geometry:
+  nml_file: ./namelist.atmosphere
+  streams_file: ./streams.atmosphere
+  deallocate non-da fields: true
+  interpolation type: unstructured
+analysis variables: [spechum, surface_pressure, temperature, uReconstructMeridional,
+  uReconstructZonal]
+background:
+  state variables: [spechum, surface_pressure, temperature, uReconstructMeridional,
+    uReconstructZonal, theta, rho, u, qv, pressure, landmask, xice, snowc, skintemp,
+    ivgtyp, isltyp, snowh, vegfra, u10, v10, lai, smois, tslb, pressure_p, qc, qi,
+    qg, qr, qs, cldfrac]
+  filename: data/mpasout.2024-05-27_00.00.00.nc
+  date: '2024-05-27T00:00:00Z'

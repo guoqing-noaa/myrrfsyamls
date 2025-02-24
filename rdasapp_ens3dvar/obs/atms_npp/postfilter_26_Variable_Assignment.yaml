@@ -1,0 +1,8 @@
+filter: Variable Assignment
+assignments:
+- name: ObsErrorFactorLat@DerivedMetaData
+  type: float
+  function:
+    name: ObsErrorFactorLatRad@ObsFunction
+    options:
+      latitude_parameters: [25.0, 0.25, 0.04, 3.0]

@@ -1,0 +1,11 @@
+filter: Variable Assignment
+assignments:
+- name: SIRetFromObs@DerivedMetaData
+  type: float
+  function:
+    name: SCATRetMW@ObsFunction
+    options:
+      scatret_ch238: 1
+      scatret_ch314: 2
+      scatret_ch890: 16
+      scatret_types: [ObsValue]

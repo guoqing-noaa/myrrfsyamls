@@ -1,0 +1,15 @@
+filter: Perform Action
+apply at iterations: 0,1
+filter variables:
+- name: stationPressure
+action:
+  name: assign error
+  error parameter: 300.0
+where:
+- variable:
+    name: ObsErrorData/stationPressure
+  minvalue: 300.0
+- variable:
+    name: ObsErrorData/stationPressure
+  value: is_valid
+defer to post: true

@@ -1,0 +1,14 @@
+filter: Bounds Check
+filter variables:
+- name: brightnessTemperature
+  channels: 1-7, 16, 17-22
+test variables:
+- name: Innovation@DerivedMetaData
+  channels: 1, 2, 5-7, 16
+maxvalue: 200.0
+minvalue: -200.0
+flag all filter variables if any test variable is out of bounds: true
+actions:
+- name: set
+  flag: WindowChannelExtremeResidual
+- name: reject

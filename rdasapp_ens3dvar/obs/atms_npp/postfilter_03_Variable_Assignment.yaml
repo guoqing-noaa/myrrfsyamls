@@ -1,0 +1,21 @@
+filter: Variable Assignment
+where:
+- variable:
+    name: CLWRetFromObs@DerivedMetaData
+  minvalue: 0.0
+  maxvalue: 999.0
+- variable:
+    name: CLWRetFromBkg@DerivedMetaData
+  minvalue: 0.0
+  maxvalue: 999.0
+where operator: and
+assignments:
+- name: CLWRetSymmetric@DerivedMetaData
+  type: float
+  function:
+    name: Arithmetic@ObsFunction
+    options:
+      variables:
+      - name: CLWRetFromObs@DerivedMetaData
+      - name: CLWRetFromBkg@DerivedMetaData
+      total coefficient: 0.5

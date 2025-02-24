@@ -1,0 +1,28 @@
+8 observers:
+t133,uv233,q133,t188,q188,p188,uv288,atms_npp
+
+
+#[t133=aircar_airTemperature_133]:
+ RejectList, Domain Check, Bounds Check, Temporal Thinning, assign error, inflate error, Bounds Check, Variable Assignment, assign error, assign error, Background Check, Background Check, assign error
+
+#[uv233=aircar_winds_233]:
+ reduce obs space, Domain Check, Bounds Check, Temporal Thinning, assign error, inflate error, inflate error, Bounds Check, Background Check, Background Check, Background Check, Background Check
+
+#[q133=aircar_specificHumidity_133]:
+ RejectList, Domain Check, Bounds Check, Temporal Thinning, assign error, inflate error, Bounds Check, Variable Assignment, assign error, assign error, Background Check, Background Check, assign error
+
+#[t188=msonet_airTemperature_188]:
+ RejectList, Domain Check, Bounds Check, Temporal Thinning, assign error, inflate error, Bounds Check, Variable Assignment, assign error, assign error, Background Check, Background Check, assign error
+
+#[q188=msonet_specificHumidity_188]:
+ RejectList, Domain Check, Bounds Check, Temporal Thinning, assign error, inflate error, Bounds Check, Variable Assignment, assign error, assign error, Background Check, Background Check, assign error
+
+#[p188=msonet_stationPressure_188]:
+ RejectList, Domain Check, Bounds Check, Temporal Thinning, assign error, inflate error, Bounds Check, Variable Assignment, assign error, assign error, Background Check, Background Check, assign error
+
+#[uv288=msonet_winds_288]:
+ RejectList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, AcceptList, reduce obs space, Domain Check, Bounds Check, Temporal Thinning, assign error, inflate error, inflate error, Bounds Check, Background Check, Background Check, Background Check, Background Check
+
+#[atms_npp=atms_npp]:
+ Create Diagnostic Flags, Variable Assignment, Variable Assignment, Variable Assignment, Variable Assignment, Variable Assignment, Variable Assignment, Variable Assignment, Variable Assignment, Bounds Check, Bounds Check, assign error, Domain Check, Gaussian Thinning, Bounds Check, Bounds Check, Bounds Check, Variable Assignment, Bounds Check, Variable Assignment, inflate error, Variable Assignment, inflate error, Variable Assignment, inflate error, Variable Assignment, inflate error, Variable Assignment, Variable Assignment, Background Check, Bounds Check, Bounds Check
+

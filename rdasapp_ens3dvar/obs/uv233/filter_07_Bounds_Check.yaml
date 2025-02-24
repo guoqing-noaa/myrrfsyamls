@@ -1,0 +1,9 @@
+filter: Bounds Check
+apply at iterations: 0,1
+filter variables:
+- name: windEastward
+- name: windNorthward
+minvalue: -200
+maxvalue: 200
+action:
+  name: reduce obs space

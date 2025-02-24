@@ -1,0 +1,13 @@
+filter: Variable Assignment
+assignments:
+- name: ObsErrorFactorSurfJacobian@DerivedMetaData
+  channels: 1-22
+  type: float
+  function:
+    name: ObsErrorFactorSurfJacobianRad@ObsFunction
+    channels: 1-22
+    options:
+      sensor: atms_npp
+      channels: 1-22
+      obserr_demisf: [0.01, 0.02, 0.015, 0.02, 0.2]
+      obserr_dtempf: [0.5, 2.0, 1.0, 2.0, 4.5]

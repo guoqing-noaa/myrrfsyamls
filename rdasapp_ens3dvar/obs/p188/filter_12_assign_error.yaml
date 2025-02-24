@@ -1,0 +1,12 @@
+filter: Perform Action
+apply at iterations: 0,1
+filter variables:
+- name: stationPressure
+action:
+  name: assign error
+  error function: TempObsErrorData/stationPressure
+where:
+- variable:
+    name: TempObsErrorData/stationPressure
+  value: is_valid
+defer to post: true

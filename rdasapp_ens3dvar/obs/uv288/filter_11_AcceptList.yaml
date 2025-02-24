@@ -1,0 +1,7 @@
+filter: AcceptList
+apply at iterations: 0,1
+where:
+- variable: MetaData/dataProviderOrigin
+  is_in: [DCNet]
+- variable: MetaData/stationIdentification
+  is_in: [DC008, DC001, DC010, DC009, DC003, DC006]

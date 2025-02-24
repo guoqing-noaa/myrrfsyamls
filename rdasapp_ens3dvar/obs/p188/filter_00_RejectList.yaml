@@ -1,0 +1,9 @@
+filter: RejectList
+apply at iterations: 0,1
+where:
+- variable: ObsType/stationPressure
+  is_in: 188
+- variable: QualityMarker/stationPressure
+  is_in: 4-15
+action:
+  name: reduce obs space

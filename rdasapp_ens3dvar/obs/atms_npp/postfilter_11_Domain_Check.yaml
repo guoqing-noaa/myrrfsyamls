@@ -1,0 +1,12 @@
+filter: Domain Check
+filter variables:
+- name: brightnessTemperature
+  channels: 1-22
+where:
+- variable:
+    name: MetaData/sensorScanPosition
+  is_in: 7-90
+actions:
+- name: set
+  flag: ScanEdgeRemoval
+- name: reject

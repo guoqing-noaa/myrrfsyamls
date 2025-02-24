@@ -1,0 +1,8 @@
+filter: Bounds Check
+apply at iterations: 0,1
+filter variables:
+- name: airTemperature
+minvalue: 100
+maxvalue: 400
+action:
+  name: reduce obs space

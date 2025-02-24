@@ -1,0 +1,25 @@
+filter: Variable Assignment
+assignments:
+- name: ObsErrorFactorSituDepend@DerivedMetaData
+  channels: 1-22
+  type: float
+  function:
+    name: ObsErrorFactorSituDependMW@ObsFunction
+    channels: 1-22
+    options:
+      sensor: atms_npp
+      channels: 1-22
+      clwbkg_function:
+        name: CLWRetFromBkg@DerivedMetaData
+      clwobs_function:
+        name: CLWRetFromObs@DerivedMetaData
+      scatobs_function:
+        name: SIRetFromObs@DerivedMetaData
+      clwmatchidx_function:
+        name: CLWMatchIndex@DerivedMetaData
+        channels: 1-22
+      obserr_function:
+        name: InitialObsError@DerivedMetaData
+        channels: 1-22
+      obserr_clearsky: [4.5, 4.5, 4.5, 2.5, 0.55, 0.3, 0.3, 0.4, 0.4, 0.4, 0.45, 0.45,
+        0.55, 0.8, 4.0, 4.0, 4.0, 3.5, 3.0, 3.0, 3.0, 3.0]

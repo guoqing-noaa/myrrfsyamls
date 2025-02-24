@@ -1,0 +1,11 @@
+filter: Bounds Check
+filter variables:
+- name: brightnessTemperature
+  channels: 1-7, 16-22
+test variables:
+- name: CLWRetFromBkg@DerivedMetaData
+maxvalue: 999.0
+actions:
+- name: set
+  flag: CLWRetrievalCheck
+- name: reject

@@ -1,0 +1,12 @@
+filter: Perform Action
+apply at iterations: 0,1
+filter variables:
+- name: specificHumidity
+action:
+  name: assign error
+  error function: TempObsErrorData/specificHumidity
+where:
+- variable:
+    name: TempObsErrorData/specificHumidity
+  value: is_valid
+defer to post: true
