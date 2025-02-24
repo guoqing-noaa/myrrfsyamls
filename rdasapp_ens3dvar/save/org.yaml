@@ -1,8 +1,3 @@
-_member:
-  date: '2024-05-27T00:00:00Z'
-  state variables: &id001 [spechum, surface_pressure, temperature, uReconstructMeridional,
-    uReconstructZonal]
-  stream name: ensemble
 output:
   filename: ./ana.$Y-$M-$D_$h.$m.$s.nc
   stream name: analysis
@@ -35,7 +30,8 @@ cost function:
     streams_file: ./streams.atmosphere
     deallocate non-da fields: true
     interpolation type: unstructured
-  analysis variables: *id001
+  analysis variables: &id001 [spechum, surface_pressure, temperature, uReconstructMeridional,
+    uReconstructZonal]
   background:
     state variables: [spechum, surface_pressure, temperature, uReconstructMeridional,
       uReconstructZonal, theta, rho, u, qv, pressure, landmask, xice, snowc, skintemp,
@@ -2609,8 +2605,3 @@ cost function:
           flag: UseflagCheck
           ignore: rejected observations
         - name: reject
-test:
-  reference filename: testoutput/rrfs-mpasjedi-ens3dvar.ref
-  test output filename: ./rrfs-mpasjedi-ens3dvar.out
-  float relative tolerance: 0.001
-  float absolute tolerance: 1.0e-06
