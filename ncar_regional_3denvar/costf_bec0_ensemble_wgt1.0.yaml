@@ -1,0 +1,26 @@
+covariance model: ensemble
+localization:
+  localization method: SABER
+  saber central block:
+    saber block name: BUMP_NICAS
+    active variables: &id001 [spechum, surface_pressure, temperature, uReconstructMeridional,
+      uReconstructZonal]
+    read:
+      io:
+        data directory: /glade/campaign/mmm/parc/taosun/regional_mpasjedi/bumpLOC/R3km-SG/H300kmV4km
+        files prefix: bumploc
+      drivers:
+        multivariate strategy: duplicated
+        read local nicas: true
+      model:
+        level for 2d variables: last
+members from template:
+  template:
+    date: 2024-09-13T06:00:00Z
+    state variables: *id001
+    stream name: ensemble
+    filename: /glade/campaign/mmm/parc/taosun/regional_mpasjedi/ensfc/R3km-SG/2024091300/mem%iMember%/EnsForCov.2024-09-13_06.00.00.nc
+  pattern: '%iMember%'
+  start: 1
+  zero padding: 3
+  nmembers: 32

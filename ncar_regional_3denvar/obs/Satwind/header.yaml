@@ -1,0 +1,31 @@
+_blank: null
+obs space:
+  obs perturbations seed: 1
+  io pool:
+    max pool size: 1
+    write multiple files: true
+  distribution:
+    name: RoundRobin
+  name: Satwind
+  _obsdatain:
+    engine: &id001
+      type: H5File
+      obsfile: /glade/derecho/scratch/taosun/regional_mpasjedi/taosun_3denvar_regional_3kmSG_conv_gnssro_mhs_emissivity/CyclingDA/2024091306/dbIn/satwind_obs_2024091306.h5
+  _obsdataout: &id002
+    engine:
+      type: H5File
+      obsfile: /glade/derecho/scratch/taosun/regional_mpasjedi/taosun_3denvar_regional_3kmSG_conv_gnssro_mhs_emissivity/CyclingDA/2024091306/dbOut/obsout_da_satwind.h5
+  obsdatain:
+    engine: *id001
+  obsdataout: *id002
+  simulated variables: [windEastward, windNorthward]
+obs error:
+  covariance model: diagonal
+  zero-mean perturbations: true
+  member: 1
+  number of members: 1
+obs operator:
+  name: VertInterp
+  observation alias file: obsop_name_map.yaml
+get values:
+  nnearest: 3

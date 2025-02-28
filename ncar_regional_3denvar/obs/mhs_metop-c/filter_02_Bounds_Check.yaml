@@ -1,0 +1,20 @@
+apply at iterations: 0,1,2,3,4,5
+filter: Bounds Check
+filter variables:
+- name: brightnessTemperature
+  channels: 1-5
+where:
+- variable:
+    name: GeoVaLs/water_area_fraction
+  maxvalue: 0.99
+test variables:
+- name: ObsFunction/BennartzScatIndex
+  options:
+    channel_89ghz: 1
+    channel_150ghz: 2
+    bennartz_coeff_1: 0.158
+    bennartz_coeff_2: 0.0163
+    apply_bias: ObsBiasData
+maxvalue: -1.0
+action:
+  name: reject

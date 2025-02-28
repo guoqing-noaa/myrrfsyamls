@@ -1,0 +1,10 @@
+apply at iterations: 0,1,2,3,4,5
+filter: Domain Check
+filter variables:
+- name: brightnessTemperature
+  channels: 5
+where:
+- variable:
+    name: MetaData/latitude
+  minvalue: -60.0
+  maxvalue: 60.0

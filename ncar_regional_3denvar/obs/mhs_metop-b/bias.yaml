@@ -1,0 +1,29 @@
+input file: /glade/campaign/mmm/parc/taosun/regional_mpasjedi/OBS/VarBC/satbias_mhs_metop-b.h5
+output file: /glade/derecho/scratch/taosun/regional_mpasjedi/taosun_3denvar_regional_3kmSG_conv_gnssro_mhs_emissivity/CyclingDA/2024091306/dbOut/satbias_mhs_metop-b.h5
+variational bc:
+  predictors:
+  - name: constant
+  - name: lapseRate
+    order: 2
+    tlapse: /glade/campaign/mmm/parc/taosun/regional_mpasjedi/OBS/VarBC/mhs_metop-b_tlapmean.txt
+  - name: lapseRate
+    tlapse: /glade/campaign/mmm/parc/taosun/regional_mpasjedi/OBS/VarBC/mhs_metop-b_tlapmean.txt
+  - name: emissivityJacobian
+  - name: sensorScanAngle
+    order: 4
+  - name: sensorScanAngle
+    order: 3
+  - name: sensorScanAngle
+    order: 2
+  - name: sensorScanAngle
+covariance:
+  minimal required obs number: 20
+  variance range: [1.0e-06, 10.0]
+  step size: 0.0001
+  largest analysis variance: 10000.0
+  prior:
+    input file: /glade/campaign/mmm/parc/taosun/regional_mpasjedi/OBS/VarBC/satbias_cov_mhs_metop-b.h5
+    inflation:
+      ratio: 1.1
+      ratio for small dataset: 2.0
+  output file: /glade/derecho/scratch/taosun/regional_mpasjedi/taosun_3denvar_regional_3kmSG_conv_gnssro_mhs_emissivity/CyclingDA/2024091306/dbOut/satbias_cov_mhs_metop-b.h5

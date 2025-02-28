@@ -1,0 +1,19 @@
+output:
+  filename: /glade/derecho/scratch/taosun/regional_mpasjedi/taosun_3denvar_regional_3kmSG_conv_gnssro_mhs_emissivity/CyclingDA/2024091306/an/an.$Y-$M-$D_$h.$m.$s.nc
+  stream name: analysis
+variational:
+  minimizer:
+    algorithm: DRPCG
+  iterations:
+  - geometry: &id001
+      nml_file: /glade/derecho/scratch/taosun/regional_mpasjedi/taosun_3denvar_regional_3kmSG_conv_gnssro_mhs_emissivity/CyclingDA/2024091306/namelist.atmosphere_R3km-SG
+      streams_file: /glade/derecho/scratch/taosun/regional_mpasjedi/taosun_3denvar_regional_3kmSG_conv_gnssro_mhs_emissivity/CyclingDA/2024091306/streams.atmosphere_R3km-SG
+      deallocate non-da fields: true
+      interpolation type: unstructured
+    gradient norm reduction: 1e-3
+    diagnostics:
+      departures: ombg
+    ninner: 60
+  - geometry: *id001
+    gradient norm reduction: 1e-3
+    ninner: 60

@@ -1,0 +1,28 @@
+8 observers:
+Aircraft,GnssroRefNCEP,Satwind,SfcPCorrected,Radiosonde,mhs_n19,mhs_metop-b,mhs_metop-c
+
+
+#[Aircraft]:
+ PreQC, Bounds Check, Background Check, Domain Check
+
+#[GnssroRefNCEP]:
+ Domain Check, ROobserror, Bounds Check, Background Check, Domain Check
+
+#[Satwind]:
+ PreQC, assign error, Bounds Check, Gaussian Thinning, Bounds Check, Background Check, Domain Check
+
+#[SfcPCorrected]:
+ PreQC, Difference Check, Bounds Check, Background Check, Domain Check
+
+#[Radiosonde]:
+ PreQC, Bounds Check, Bounds Check, Background Check, Domain Check
+
+#[mhs_n19]:
+ Domain Check, assign error, Bounds Check, Bounds Check, BlackList, BlackList, Background Check, Bounds Check, Gaussian_Thinning, Bounds Check, Domain Check
+
+#[mhs_metop-b]:
+ Domain Check, assign error, Bounds Check, Bounds Check, BlackList, BlackList, Background Check, Bounds Check, Gaussian_Thinning, Bounds Check, Domain Check
+
+#[mhs_metop-c]:
+ Domain Check, assign error, Bounds Check, Bounds Check, BlackList, BlackList, Background Check, Bounds Check, Gaussian_Thinning, Bounds Check, Domain Check
+

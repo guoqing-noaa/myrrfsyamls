@@ -1,0 +1,9 @@
+filter: Bounds Check
+filter variables:
+- name: brightnessTemperature
+  channels: 1-5
+test variables:
+- name: GeoVaLs/observable_domain_mask
+flag all filter variables if any test variable is out of bounds: true
+minvalue: 0.0
+maxvalue: 0.1

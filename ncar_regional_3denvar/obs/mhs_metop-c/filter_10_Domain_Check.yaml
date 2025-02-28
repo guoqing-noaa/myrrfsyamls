@@ -1,0 +1,12 @@
+filter: Domain Check
+where:
+- variable:
+    name: MetaData/latitude
+  minvalue: -9.06518
+  maxvalue: 11.4725
+- variable:
+    name: MetaData/longitude
+  minvalue: 91.7506
+  maxvalue: 112.268
+action:
+  name: reduce obs space

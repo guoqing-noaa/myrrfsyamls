@@ -1,0 +1,39 @@
+_blank: null
+obs space:
+  obs perturbations seed: 1
+  io pool:
+    max pool size: 1
+    write multiple files: true
+  distribution:
+    name: RoundRobin
+  name: mhs_n19
+  _obsdatain: &id001
+    engine:
+      type: H5File
+      obsfile: /glade/derecho/scratch/taosun/regional_mpasjedi/taosun_3denvar_regional_3kmSG_conv_gnssro_mhs_emissivity/CyclingDA/2024091306/dbIn/mhs_n19_obs_2024091306.h5
+  _obsdataout: &id002
+    engine:
+      type: H5File
+      obsfile: /glade/derecho/scratch/taosun/regional_mpasjedi/taosun_3denvar_regional_3kmSG_conv_gnssro_mhs_emissivity/CyclingDA/2024091306/dbOut/obsout_da_mhs_n19.h5
+  obsdatain: *id001
+  obsdataout: *id002
+  simulated variables: [brightnessTemperature]
+  channels: 1-5
+obs error:
+  covariance model: diagonal
+  zero-mean perturbations: true
+  member: 1
+  number of members: 1
+obs operator:
+  name: CRTM
+  SurfaceWindGeoVars: uv
+  Absorbers: [H2O, O3]
+  linear obs operator:
+    Absorbers: [H2O]
+  obs options:
+    EndianType: little_endian
+    CoefficientPath: /glade/work/nystrom/Code/JEDI/jcsda_internal/CRTM_V3_coeffs/
+    IRVISlandCoeff: IGBP
+    Sensor_ID: mhs_n19
+get values:
+  nnearest: 3

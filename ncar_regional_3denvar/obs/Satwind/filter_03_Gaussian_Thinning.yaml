@@ -1,0 +1,4 @@
+filter: Gaussian Thinning
+horizontal_mesh: 30.0
+action:
+  name: reduce obs space

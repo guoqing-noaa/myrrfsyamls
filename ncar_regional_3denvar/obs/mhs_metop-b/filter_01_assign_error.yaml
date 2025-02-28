@@ -1,0 +1,8 @@
+apply at iterations: 0,1,2,3,4,5
+filter: Perform Action
+filter variables:
+- name: brightnessTemperature
+  channels: 1-5
+action:
+  name: assign error
+  error parameter vector: [2.5, 2.5, 2.5, 2.0, 2.0]

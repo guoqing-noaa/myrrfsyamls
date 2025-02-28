@@ -1,0 +1,4 @@
+filter: Difference Check
+reference: MetaData/stationElevation
+value: GeoVaLs/surface_altitude
+threshold: 200.0

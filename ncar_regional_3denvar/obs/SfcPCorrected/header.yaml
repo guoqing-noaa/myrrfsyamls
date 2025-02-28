@@ -1,0 +1,33 @@
+_blank: null
+obs space:
+  obs perturbations seed: 1
+  io pool:
+    max pool size: 1
+    write multiple files: true
+  distribution:
+    name: RoundRobin
+  name: SfcPCorrected
+  _obsdatain: &id001
+    engine:
+      type: H5File
+      obsfile: /glade/derecho/scratch/taosun/regional_mpasjedi/taosun_3denvar_regional_3kmSG_conv_gnssro_mhs_emissivity/CyclingDA/2024091306/dbIn/sfc_obs_2024091306.h5
+  _obsdataout: &id002
+    engine:
+      type: H5File
+      obsfile: /glade/derecho/scratch/taosun/regional_mpasjedi/taosun_3denvar_regional_3kmSG_conv_gnssro_mhs_emissivity/CyclingDA/2024091306/dbOut/obsout_da_sfc.h5
+  obsdatain: *id001
+  obsdataout: *id002
+  simulated variables: [stationPressure]
+obs error:
+  covariance model: diagonal
+  zero-mean perturbations: true
+  member: 1
+  number of members: 1
+obs operator:
+  name: SfcPCorrected
+  da_psfc_scheme: UKMO
+linear obs operator:
+  name: Identity
+  observation alias file: obsop_name_map.yaml
+get values:
+  nnearest: 3

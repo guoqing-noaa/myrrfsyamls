@@ -1,0 +1,4 @@
+apply at iterations: 0,1,2,3,4,5
+filter: ROobserror
+variable: atmosphericRefractivity
+errmodel: NCEP

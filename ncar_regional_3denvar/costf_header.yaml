@@ -1,0 +1,19 @@
+cost type: 3D-Var
+time window:
+  begin: 2024-09-13T03:00:00Z
+  length: PT6H
+jb evaluation: false
+geometry:
+  nml_file: /glade/derecho/scratch/taosun/regional_mpasjedi/taosun_3denvar_regional_3kmSG_conv_gnssro_mhs_emissivity/CyclingDA/2024091306/namelist.atmosphere_R3km-SG
+  streams_file: /glade/derecho/scratch/taosun/regional_mpasjedi/taosun_3denvar_regional_3kmSG_conv_gnssro_mhs_emissivity/CyclingDA/2024091306/streams.atmosphere_R3km-SG
+  deallocate non-da fields: true
+  interpolation type: unstructured
+analysis variables: [spechum, surface_pressure, temperature, uReconstructMeridional,
+  uReconstructZonal]
+background:
+  state variables: [spechum, surface_pressure, temperature, uReconstructMeridional,
+    uReconstructZonal, theta, rho, u, qv, pressure, landmask, observable_domain_mask,
+    xice, snowc, skintemp, ivgtyp, isltyp, snowh, vegfra, u10, v10, lai, smois, tslb,
+    pressure_p]
+  filename: /glade/derecho/scratch/taosun/regional_mpasjedi/taosun_3denvar_regional_3kmSG_conv_gnssro_mhs_emissivity/CyclingDA/2024091306/bg/bg.2024-09-13_06.00.00.nc
+  date: 2024-09-13T06:00:00Z

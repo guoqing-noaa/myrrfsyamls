@@ -1,0 +1,12 @@
+filter: Bounds Check
+filter variables:
+- name: airTemperature
+- name: windEastward
+- name: windNorthward
+- name: specificHumidity
+- name: virtualTemperature
+test variables:
+- name: GeoVaLs/observable_domain_mask
+flag all filter variables if any test variable is out of bounds: true
+minvalue: 0.0
+maxvalue: 0.1

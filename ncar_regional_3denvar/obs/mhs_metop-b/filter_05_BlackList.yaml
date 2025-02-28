@@ -1,0 +1,12 @@
+apply at iterations: 0,1,2,3,4,5
+filter: BlackList
+filter variables:
+- name: brightnessTemperature
+  channels: 1-5
+action:
+  name: inflate error
+  inflation variable:
+    name: ObsFunction/ObsErrorFactorTransmitTopRad
+    channels: 1-5
+    options:
+      channels: 1-5

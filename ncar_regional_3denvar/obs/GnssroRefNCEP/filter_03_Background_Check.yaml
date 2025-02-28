@@ -1,0 +1,3 @@
+apply at iterations: 0,1,2,3,4,5
+filter: Background Check
+threshold: 5.0
