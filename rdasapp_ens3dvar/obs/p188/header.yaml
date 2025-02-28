@@ -21,8 +21,10 @@ obs operator:
   da_psfc_scheme: GSI
   geovar_sfc_geomz: geopotential_height_at_surface
   geovar_geomz: geopotential_height
+linear obs operator:
+  name: Identity
+obs error:
+  covariance model: diagonal
 obs localizations:
 - localization method: Horizontal Gaspari-Cohn
   lengthscale: 300e3
-obs error:
-  covariance model: diagonal

@@ -30,8 +30,10 @@ obs operator:
     variables:
     - name: windEastward
     - name: windNorthward
+linear obs operator:
+  name: Identity
+obs error:
+  covariance model: diagonal
 obs localizations:
 - localization method: Horizontal Gaspari-Cohn
   lengthscale: 300e3
-obs error:
-  covariance model: diagonal

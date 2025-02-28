@@ -26,8 +26,8 @@ obs operator:
     interpolation method: log-linear
     variables:
     - name: airTemperature
+obs error:
+  covariance model: diagonal
 obs localizations:
 - localization method: Horizontal Gaspari-Cohn
   lengthscale: 300e3
-obs error:
-  covariance model: diagonal
