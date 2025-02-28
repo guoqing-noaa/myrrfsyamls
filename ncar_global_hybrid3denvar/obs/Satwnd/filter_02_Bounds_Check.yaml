@@ -1,0 +1,9 @@
+filter: Bounds Check
+filter variables:
+- name: windEastward
+- name: windNorthward
+test variables:
+- name: MetaData/pressure
+maxvalue: 95000
+action:
+  name: reject

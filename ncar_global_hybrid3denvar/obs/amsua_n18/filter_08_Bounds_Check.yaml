@@ -1,0 +1,14 @@
+filter: Bounds Check
+filter variables:
+- name: brightnessTemperature
+  channels: 1-15
+test variables:
+- name: ObsFunction/InterChannelConsistencyCheck
+  channels: 1-15
+  options:
+    channels: 1-15
+    sensor: amsua_n18
+    use_flag: [-1, -1, -1, -1, 1, 1, 1, 1, 1, -1, -1, -1, -1, -1, -1]
+maxvalue: 1.0e-12
+action:
+  name: reject

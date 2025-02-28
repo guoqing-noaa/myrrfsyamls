@@ -1,0 +1,50 @@
+apply at iterations: 0,1,2,3,4,5
+filter: Background Check
+filter variables:
+- name: brightnessTemperature
+  channels: 1-15
+function absolute threshold:
+- name: ObsFunction/ObsErrorBoundMW
+  channels: 1-15
+  options:
+    sensor: amsua_metop-a
+    channels: 1-15
+    obserr_bound_latitude:
+      name: ObsFunction/ObsErrorFactorLatRad
+      options:
+        latitude_parameters: [25.0, 0.25, 0.04, 3.0]
+    obserr_bound_transmittop:
+      name: ObsFunction/ObsErrorFactorTransmitTopRad
+      channels: 1-15
+      options:
+        channels: 1-15
+    obserr_bound_topo:
+      name: ObsFunction/ObsErrorFactorTopoRad
+      channels: 1-15
+      options:
+        channels: 1-15
+        sensor: amsua_metop-a
+    obserr_function:
+      name: ObsFunction/ObsErrorModelRamp
+      channels: 1-15
+      options:
+        channels: 1-15
+        xvar:
+          name: ObsFunction/CLWRetSymmetricMW
+          options:
+            clwret_ch238: 1
+            clwret_ch314: 2
+            clwret_types: [ObsValue, HofX]
+            bias_application: HofX
+        x0: [0.05, 0.03, 0.03, 0.02, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+          0.0, 0.03]
+        x1: [0.6, 0.45, 0.4, 0.45, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+          0.2]
+        err0: [2.5, 2.2, 2.0, 0.55, 0.3, 0.23, 0.23, 0.25, 0.25, 0.35, 0.4, 0.55,
+          0.8, 3.0, 3.5]
+        err1: [20.0, 18.0, 12.0, 3.0, 0.3, 0.23, 0.23, 0.25, 0.25, 0.35, 0.4, 0.55,
+          0.8, 3.0, 18.0]
+    obserr_bound_max: [4.5, 4.5, 4.5, 2.5, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.5, 3.5,
+      4.5, 4.5, 4.5]
+action:
+  name: reject

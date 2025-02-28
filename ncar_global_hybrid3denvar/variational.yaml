@@ -1,0 +1,19 @@
+output:
+  filename: /glade/derecho/scratch/ivette/pandac/ivette_3dhybrid-60-60-iter_O30kmI60km_ensB-SE80+RTPP70_VarBC_v3.0.2_newBenchmark/CyclingDA/2018041500/an/an.$Y-$M-$D_$h.$m.$s.nc
+  stream name: analysis
+variational:
+  minimizer:
+    algorithm: DRPCG
+  iterations:
+  - geometry: &id001
+      nml_file: /glade/derecho/scratch/ivette/pandac/ivette_3dhybrid-60-60-iter_O30kmI60km_ensB-SE80+RTPP70_VarBC_v3.0.2_newBenchmark/CyclingDA/2018041500/namelist.atmosphere_60km
+      streams_file: /glade/derecho/scratch/ivette/pandac/ivette_3dhybrid-60-60-iter_O30kmI60km_ensB-SE80+RTPP70_VarBC_v3.0.2_newBenchmark/CyclingDA/2018041500/streams.atmosphere_60km
+      deallocate non-da fields: true
+      interpolation type: unstructured
+    gradient norm reduction: 1e-3
+    diagnostics:
+      departures: ombg
+    ninner: 60
+  - geometry: *id001
+    gradient norm reduction: 1e-3
+    ninner: 60

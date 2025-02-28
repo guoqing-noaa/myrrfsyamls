@@ -1,0 +1,29 @@
+input file: /glade/campaign/mmm/parc/jban/pandac_common/obs/satbias/2018/satbias_mhs_metop-a.h5
+output file: /glade/derecho/scratch/ivette/pandac/ivette_3dhybrid-60-60-iter_O30kmI60km_ensB-SE80+RTPP70_VarBC_v3.0.2_newBenchmark/CyclingDA/2018041500/dbOut/satbias_mhs_metop-a.h5
+variational bc:
+  predictors:
+  - name: constant
+  - name: lapseRate
+    order: 2
+    tlapse: /glade/campaign/mmm/parc/jban/pandac_common/obs/satbias/2018/mhs_metop-a_tlapmean.txt
+  - name: lapseRate
+    tlapse: /glade/campaign/mmm/parc/jban/pandac_common/obs/satbias/2018/mhs_metop-a_tlapmean.txt
+  - name: emissivityJacobian
+  - name: sensorScanAngle
+    order: 4
+  - name: sensorScanAngle
+    order: 3
+  - name: sensorScanAngle
+    order: 2
+  - name: sensorScanAngle
+covariance:
+  minimal required obs number: 20
+  variance range: [1.0e-06, 10.0]
+  step size: 0.0001
+  largest analysis variance: 10000.0
+  prior:
+    input file: /glade/campaign/mmm/parc/jban/pandac_common/obs/satbias/2018/satbias_cov_mhs_metop-a.h5
+    inflation:
+      ratio: 1.1
+      ratio for small dataset: 2.0
+  output file: /glade/derecho/scratch/ivette/pandac/ivette_3dhybrid-60-60-iter_O30kmI60km_ensB-SE80+RTPP70_VarBC_v3.0.2_newBenchmark/CyclingDA/2018041500/dbOut/satbias_cov_mhs_metop-a.h5

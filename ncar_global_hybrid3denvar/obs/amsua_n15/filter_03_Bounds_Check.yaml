@@ -1,0 +1,39 @@
+filter: Bounds Check
+filter variables:
+- name: brightnessTemperature
+  channels: 1-15
+test variables:
+- name: ObsFunction/HydrometeorCheckAMSUA
+  channels: 1-15
+  options:
+    channels: 1-15
+    obserr_clearsky: [3.0, 2.2, 2.0, 0.6, 0.3, 0.23, 0.25, 0.275, 0.34, 0.4, 0.6,
+      1.0, 1.5, 2.0, 3.5]
+    clwret_function:
+      name: ObsFunction/CLWRetMW
+      options:
+        clwret_ch238: 1
+        clwret_ch314: 2
+        clwret_types: [ObsValue]
+    obserr_function:
+      name: ObsFunction/ObsErrorModelRamp
+      channels: 1-15
+      options:
+        channels: 1-15
+        xvar:
+          name: ObsFunction/CLWRetSymmetricMW
+          options:
+            clwret_ch238: 1
+            clwret_ch314: 2
+            clwret_types: [ObsValue, HofX]
+        x0: [0.05, 0.03, 0.03, 0.02, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+          0.0, 0.03]
+        x1: [0.6, 0.45, 0.4, 0.45, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+          0.2]
+        err0: [3.0, 2.2, 2.0, 0.6, 0.3, 0.23, 0.25, 0.275, 0.34, 0.4, 0.6, 1.0, 1.5,
+          2.0, 3.5]
+        err1: [3.0, 2.2, 2.0, 0.6, 0.3, 0.23, 0.25, 0.275, 0.34, 0.4, 0.6, 1.0, 1.5,
+          2.0, 3.5]
+maxvalue: 0.0
+action:
+  name: reject

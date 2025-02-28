@@ -1,0 +1,12 @@
+filter: Perform Action
+filter variables:
+- name: brightnessTemperature
+  channels: 1-15
+action:
+  name: inflate error
+  inflation variable:
+    name: ObsFunction/ObsErrorFactorTopoRad
+    channels: 1-15
+    options:
+      sensor: amsua_metop-a
+      channels: 1-15

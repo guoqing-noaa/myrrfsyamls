@@ -1,0 +1,4 @@
+filter: ROobserror
+filter variables:
+- name: bendingAngle
+errmodel: NRL

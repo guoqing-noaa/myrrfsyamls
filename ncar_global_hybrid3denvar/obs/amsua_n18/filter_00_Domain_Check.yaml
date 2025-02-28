@@ -1,0 +1,5 @@
+filter: Domain Check
+where:
+- variable:
+    name: MetaData/sensorZenithAngle
+  maxvalue: 45.0

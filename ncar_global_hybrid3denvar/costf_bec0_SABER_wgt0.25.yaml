@@ -1,0 +1,41 @@
+covariance model: SABER
+saber central block:
+  saber block name: BUMP_NICAS
+  active variables: &id001 [stream_function, velocity_potential, temperature, spechum,
+    surface_pressure]
+  read:
+    io:
+      data directory: /glade/campaign/mmm/parc/liuz/pandac_common/BUMP_files/derecho_2.1/60km.NICAS_00global
+      files prefix: mpas_parametersbump_cov
+    drivers:
+      multivariate strategy: univariate
+      read local nicas: true
+saber outer blocks:
+- saber block name: StdDev
+  read:
+    model file:
+      filename: /glade/campaign/mmm/parc/liuz/pandac_common/BUMP_files/derecho_2.1/60km.CMAT_00/mpas.stddev_0p33.2018-04-15_00.00.00.nc
+      date: 2018-04-15T00:00:00Z
+      stream name: control
+- saber block name: BUMP_VerticalBalance
+  read:
+    io:
+      data directory: /glade/campaign/mmm/parc/liuz/pandac_common/BUMP_files/derecho_2.1/60km.VBAL_00
+      files prefix: mpas_vbal
+    drivers:
+      read local sampling: true
+      read vertical balance: true
+    vertical balance:
+      vbal:
+      - balanced variable: velocity_potential
+        unbalanced variable: stream_function
+        diagonal regression: true
+      - balanced variable: temperature
+        unbalanced variable: stream_function
+      - balanced variable: surface_pressure
+        unbalanced variable: stream_function
+linear variable change:
+  linear variable change name: Control2Analysis
+  input variables: *id001
+  output variables: [spechum, surface_pressure, temperature, uReconstructMeridional,
+    uReconstructZonal]

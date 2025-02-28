@@ -1,0 +1,14 @@
+filter: Perform Action
+filter variables:
+- name: brightnessTemperature
+  channels: 1-15
+action:
+  name: inflate error
+  inflation variable:
+    name: ObsFunction/ObsErrorFactorSurfJacobianRad
+    channels: 1-15
+    options:
+      channels: 1-15
+      sensor: amsua_n15
+      obserr_demisf: [0.01, 0.02, 0.015, 0.02, 0.2]
+      obserr_dtempf: [0.5, 2.0, 1.0, 2.0, 4.5]

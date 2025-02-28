@@ -1,0 +1,34 @@
+_blank: null
+obs space:
+  obs perturbations seed: 1
+  io pool:
+    max pool size: 1
+    write multiple files: true
+  distribution:
+    name: RoundRobin
+  name: GnssroBndROPP1D
+  _obsdatain:
+    engine: &id001
+      type: H5File
+      obsfile: /glade/derecho/scratch/ivette/pandac/ivette_3dhybrid-60-60-iter_O30kmI60km_ensB-SE80+RTPP70_VarBC_v3.0.2_newBenchmark/CyclingDA/2018041500/dbIn/gnssrobndropp1d_obs_2018041500.h5
+  _obsdataout: &id002
+    engine:
+      type: H5File
+      obsfile: /glade/derecho/scratch/ivette/pandac/ivette_3dhybrid-60-60-iter_O30kmI60km_ensB-SE80+RTPP70_VarBC_v3.0.2_newBenchmark/CyclingDA/2018041500/dbOut/obsout_da_gnssrobndropp1d.h5
+  obsdatain:
+    engine: *id001
+    obsgrouping:
+      group variables: [sequenceNumber]
+      sort variable: impactHeightRO
+      sort order: ascending
+  obsdataout: *id002
+  simulated variables: [bendingAngle]
+obs error:
+  covariance model: diagonal
+  zero-mean perturbations: true
+  member: 1
+  number of members: 1
+obs operator:
+  name: GnssroBndROPP1D
+get values:
+  nnearest: 3

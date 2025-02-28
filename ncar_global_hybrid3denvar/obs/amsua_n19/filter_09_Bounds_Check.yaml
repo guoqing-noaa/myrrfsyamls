@@ -1,0 +1,13 @@
+filter: Bounds Check
+filter variables:
+- name: brightnessTemperature
+  channels: 1-15
+test variables:
+- name: ObsFunction/ChannelUseflagCheckRad
+  channels: 1-15
+  options:
+    channels: 1-15
+    use_flag: [-1, -1, -1, -1, 1, 1, 1, -1, 1, -1, -1, -1, -1, -1, -1]
+minvalue: 1.0e-12
+action:
+  name: reject
